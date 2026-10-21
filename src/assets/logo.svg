@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="none">
+  <!-- Rounded Background Box -->
+  <rect width="32" height="32" rx="8" fill="#0b1322" stroke="#2a3b5c" stroke-width="1.2" />
+  
+  <!-- Left Code Bracket < -->
+  <path d="M 8 11 L 4.5 16 L 8 21" stroke="#8a67ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Letter U -->
+  <path d="M 11.5 11.5 V 17.5 C 11.5 19.5 13 20.5 14.5 20.5 C 16 20.5 17.5 19.5 17.5 17.5 V 11.5" stroke="#5ee7f7" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Letter T -->
+  <path d="M 18.5 12.5 H 25.5 M 22 12.5 V 20.5" stroke="#eef2ff" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Right Code Bracket > -->
+  <path d="M 24 11 L 27.5 16 L 24 21" stroke="#8a67ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Tech Pulse Dot -->
+  <circle cx="16" cy="7" r="1.5" fill="#5ee7f7" />
+</svg>
