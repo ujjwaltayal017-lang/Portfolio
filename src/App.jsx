@@ -70,8 +70,8 @@ const projects = [
     type: "Travel & stays platform",
     description: "A travel listing application built around accommodation discovery, user authentication, image hosting, and maps.",
     tech: ["EJS", "Node.js", "MongoDB", "Mapbox"],
-    demo: "",
-    github: "",
+    demo: "https://wanderlust-bookings-hkch.onrender.com",
+    github: "https://github.com/ujjwaltayal017-lang/wanderlust-Stays",
     mark: "WS",
     tone: "cyan"
   }
