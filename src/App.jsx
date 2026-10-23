@@ -151,7 +151,7 @@ function App() {
               </a>
               <a 
                 className="button secondary download-btn" 
-                href="./assets/Ujjwal_Tayal_Resume.pdf" 
+                href="/Ujjwal_Tayal_Resume.pdf" 
                 download="Ujjwal_Tayal_Resume.pdf"
                 target="_blank" 
                 rel="noreferrer"
