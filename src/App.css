@@ -17,6 +17,7 @@
   --muted: #9aa8bf;
   --purple: #8a67ff;
   --cyan: #5ee7f7;
+  --accent-amber: #f59e0b;
 }
 
 /* =========================
@@ -110,7 +111,7 @@ a {
 .nav-social {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 .nav-social a,
@@ -231,7 +232,7 @@ a {
   border-radius: 9px;
   font-size: 13px;
   font-weight: 700;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   cursor: pointer;
 }
 
@@ -249,6 +250,22 @@ a {
   border: 1px solid #34435e;
   background: #0c1422;
   color: #dbe3f4;
+}
+
+.button.secondary:hover {
+  border-color: #5ee7f7;
+  color: #ffffff;
+}
+
+.button.tertiary {
+  border: 1px solid rgba(138, 103, 255, 0.3);
+  background: rgba(138, 103, 255, 0.08);
+  color: #d8cefe;
+}
+
+.button.tertiary:hover {
+  border-color: #8a67ff;
+  background: rgba(138, 103, 255, 0.16);
 }
 
 .hero-social {
@@ -325,7 +342,7 @@ a {
   z-index: 3;
   left: 0;
   top: 40px;
-  width: 215px;
+  width: 220px;
   padding: 13px 15px;
   background: rgba(10, 18, 32, 0.94);
   backdrop-filter: blur(8px);
@@ -343,7 +360,7 @@ a {
 }
 
 .code-card p {
-  margin: 8px 0;
+  margin: 6px 0;
   color: #a9b7d1;
 }
 
@@ -495,7 +512,7 @@ a {
 }
 
 /* =========================
-   8. About Section
+   8. About Section & LeetCode Callout
 ========================= */
 .about-grid {
   display: grid;
@@ -520,6 +537,55 @@ a {
   color: #98a7bd;
   line-height: 1.9;
   margin: 0 0 14px;
+}
+
+.leetcode-banner {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid #2d3b58;
+  background: linear-gradient(130deg, #101a2e, #0c1424);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.leetcode-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.leetcode-content h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  color: #f1f5f9;
+}
+
+.leetcode-content p {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.leetcode-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #f59e0b;
+  transition: color 0.2s;
+}
+
+.leetcode-link:hover {
+  color: #fbbf24;
+  text-decoration: underline;
 }
 
 .principles {
@@ -614,8 +680,64 @@ a {
   font-size: 11px;
 }
 
+/* =========================================
+   10. Currently Learning Section
+========================================= */
+.learning-subtitle {
+  max-width: 650px;
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.learning-card {
+  border: 1px solid #223149;
+  background: #0c1424;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.learning-card:hover {
+  transform: translateY(-3px);
+  border-color: #38bdf8;
+}
+
+.learning-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: 10px 'DM Mono', monospace;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.learning-card h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: #f1f5f9;
+}
+
+.learning-card p {
+  font-size: 11px;
+  color: #8393aa;
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* =========================
-   10. Projects Section
+   11. Projects Section
 ========================= */
 .projects-grid {
   display: grid;
@@ -810,7 +932,7 @@ a {
 }
 
 /* =========================
-   11. Contact Section
+   12. Contact Section
 ========================= */
 .contact-section {
   background: radial-gradient(
@@ -849,7 +971,7 @@ a {
 .contact-quick-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .quick-item {
@@ -887,7 +1009,7 @@ a {
 }
 
 /* =========================
-   12. Footer
+   13. Footer
 ========================= */
 footer {
   width: min(1120px, calc(100% - 48px));
@@ -918,7 +1040,7 @@ footer p span {
 }
 
 /* =========================
-   13. Tablet Responsive
+   14. Tablet Responsive
 ========================= */
 @media (max-width: 880px) {
   .hero {
@@ -936,10 +1058,13 @@ footer p span {
   .projects-grid {
     grid-template-columns: 1fr;
   }
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ========================================================
-   14. Mobile Responsive (Face Clear & Text Overlap Removed)
+   15. Mobile Responsive
 ======================================================== */
 @media (max-width: 640px) {
   .section-wrap {
@@ -955,7 +1080,6 @@ footer p span {
     display: none;
   }
 
-  /* Hero Section Mobile */
   .hero {
     display: flex;
     flex-direction: column;
@@ -964,7 +1088,6 @@ footer p span {
     text-align: center;
   }
 
-  /* Art container placed cleanly at the top */
   .hero-art {
     order: -1;
     height: 300px;
@@ -976,7 +1099,6 @@ footer p span {
     position: relative;
   }
 
-  /* Face/Avatar clear, centered, and unobstructed */
   .hero-avatar-wrapper {
     width: 210px;
     height: 210px;
@@ -993,12 +1115,10 @@ footer p span {
     border-radius: 50%;
   }
 
-  /* Completely hide the overlapping code box on mobile */
   .code-card {
     display: none !important;
   }
 
-  /* Clean floating badges */
   .floating-chip {
     font-size: 10px;
     padding: 6px 11px;
@@ -1030,7 +1150,6 @@ footer p span {
     display: none;
   }
 
-  /* Hero Content Mobile */
   .eyebrow {
     justify-content: center;
     margin-bottom: 16px;
@@ -1055,11 +1174,14 @@ footer p span {
     justify-content: center;
   }
 
+  .hero-actions .button {
+    width: 100%;
+  }
+
   .hero-social {
     justify-content: center;
   }
 
-  /* Intro Strip Mobile */
   .intro-strip {
     display: flex;
     flex-direction: column;
@@ -1072,7 +1194,6 @@ footer p span {
     padding: 0;
   }
 
-  /* Sections Mobile */
   .content-section {
     padding-top: 55px;
     padding-bottom: 55px;
@@ -1083,6 +1204,10 @@ footer p span {
   }
 
   .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-grid {
     grid-template-columns: 1fr;
   }
 

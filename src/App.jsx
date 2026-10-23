@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 
-// Importing icons from react-icons (Lu / Fi / Fa / Fa6 / Bs / Hi)
+// Importing icons from react-icons
 import { 
   LuCode, 
   LuTerminal, 
@@ -10,7 +10,10 @@ import {
   LuMail, 
   LuMapPin, 
   LuPhone, 
-  LuBriefcase 
+  LuBriefcase,
+  LuDownload,
+  LuBrainCircuit,
+  LuRocket
 } from "react-icons/lu";
 import { 
   FiArrowRight, 
@@ -23,8 +26,11 @@ import {
   FaRobot, 
   FaWrench 
 } from "react-icons/fa6";
+import { 
+  SiLeetcode 
+} from "react-icons/si";
 
-// Update the path to your image location (e.g. ./profile.jpg or /profile.jpg if in public folder)
+// Place Ujjwal_Tayal_Resume.pdf inside your public folder or import it as needed
 import profileImg from "./assets/profile.png";
 
 const skills = [
@@ -32,6 +38,18 @@ const skills = [
   { title: "Backend", icon: LuTerminal, items: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "REST APIs"] },
   { title: "AI & GenAI", icon: FaRobot, items: ["Gemini API", "LangChain", "LangGraph", "RAG", "Vector Databases", "Prompt Engineering"] },
   { title: "Tools & Cloud", icon: FaWrench, items: ["Git", "GitHub", "Docker", "Postman", "VS Code", "Linux"] }
+];
+
+const currentlyLearning = [
+  { name: "Docker", tag: "DevOps & Containers" },
+  { name: "Redis", tag: "Caching & In-Memory DB" },
+  { name: "System Design", tag: "Scalability & Architecture" },
+  { name: "AWS", tag: "Cloud Infrastructure" },
+  { name: "RAG", tag: "Retrieval-Augmented Generation" },
+  { name: "Vector Databases", tag: "ChromaDB / Pinecone" },
+  { name: "GenAI", tag: "LLMs & Multimodal Models" },
+  { name: "LangChain", tag: "LLM Framework" },
+  { name: "LangGraph", tag: "Agent Workflows & State Machines" }
 ];
 
 const projects = [
@@ -91,6 +109,7 @@ function App() {
           <a className="active" href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
+          <a href="#learning">Learning</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -101,6 +120,9 @@ function App() {
           </a>
           <a href="https://www.linkedin.com/in/ujjwal-tayal-79380732b/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
             <FaLinkedin size={18} />
+          </a>
+          <a href="https://leetcode.com/u/UjjwalTayal/" target="_blank" rel="noreferrer" aria-label="LeetCode">
+            <SiLeetcode size={18} />
           </a>
           <a href="mailto:ujjwaltayal017@gmail.com" aria-label="Email">
             <LuMail size={18} />
@@ -120,14 +142,23 @@ function App() {
             <h2>Full Stack Developer <em>(MERN)</em> <span className="plus">+</span> AI</h2>
             <p className="hero-desc">
               I build modern web applications and bring AI into useful, real-world products. 
-              From clean React interfaces to secure APIs and intelligent AI features, 
-              I enjoy turning ideas into things people can use.
+              From clean React interfaces to secure APIs, DSA problem solving, and intelligent AI features, 
+              I enjoy turning ideas into scalable software people can rely on.
             </p>
             <div className="hero-actions">
               <a className="button primary" href="#projects">
                 Explore Projects <FiArrowRight size={17} />
               </a>
-              <a className="button secondary" href="#contact">
+              <a 
+                className="button secondary download-btn" 
+                href="/Ujjwal_Tayal_Resume.pdf" 
+                download="Ujjwal_Tayal_Resume.pdf"
+                target="_blank" 
+                rel="noreferrer"
+              >
+                <LuDownload size={16} /> Download Resume
+              </a>
+              <a className="button tertiary" href="#contact">
                 <LuMail size={16} /> Let's Connect
               </a>
             </div>
@@ -137,6 +168,9 @@ function App() {
               </a>
               <a href="https://www.linkedin.com/in/ujjwal-tayal-79380732b/" target="_blank" rel="noreferrer">
                 <FaLinkedin size={14} /> LinkedIn
+              </a>
+              <a href="https://leetcode.com/u/UjjwalTayal/" target="_blank" rel="noreferrer">
+                <SiLeetcode size={14} /> LeetCode
               </a>
               <a href="tel:+919027399867">
                 <LuPhone size={14} /> +91 9027399867
@@ -161,6 +195,7 @@ function App() {
               <span className="dots">● ● ●</span>
               <p><i>const</i> developer = {'{'}</p>
               <p className="indent">stack: <b>"MERN"</b>,</p>
+              <p className="indent">dsa: <b>"Java"</b>,</p>
               <p className="indent">focus: <b>"AI + Web"</b>,</p>
               <p className="indent">mindset: <b>"Keep building"</b></p>
               <p>{'}'};</p>
@@ -200,9 +235,27 @@ function App() {
           </div>
           <div className="about-grid">
             <div className="about-text">
-              <p className="large-copy">I’m a developer who likes building things that are <span>useful, thoughtful, and a little smarter.</span></p>
-              <p>My core focus is the MERN stack, with a growing focus on Generative AI and agentic workflows. I enjoy understanding how the frontend, backend, database, and AI layer work together—not just making a page look good.</p>
-              <p>Currently sharpening my skills through hands-on projects, exploring RAG and AI agents, and looking for an opportunity to contribute to a real engineering team.</p>
+              <p className="large-copy">I’m a developer who likes building things that are <span>useful, thoughtful, and computationally sound.</span></p>
+              <p>My core focus is the MERN stack paired with Generative AI and agentic workflows. I enjoy understanding how the frontend, backend, database, and intelligence layers interact to create seamless real-world products.</p>
+              <p>Alongside development, I actively solve Data Structures & Algorithms challenges using Java to sharpen algorithmic thinking, optimize time-space complexity, and write high-performance code.</p>
+              
+              <div className="leetcode-banner">
+                <div className="leetcode-icon-box">
+                  <SiLeetcode size={28} />
+                </div>
+                <div className="leetcode-content">
+                  <h4>Algorithmic Problem Solving</h4>
+                  <p>Practicing Data Structures & Algorithms in Java on LeetCode.</p>
+                  <a 
+                    href="https://leetcode.com/u/UjjwalTayal/" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="leetcode-link"
+                  >
+                    View LeetCode Profile (@UjjwalTayal) <FiArrowUpRight size={14} />
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="principles">
               <div className="principle">
@@ -211,11 +264,15 @@ function App() {
               </div>
               <div className="principle">
                 <span>02</span>
-                <div><h3>Make AI practical</h3><p>Use LLMs to solve clear problems, not just add a chatbot.</p></div>
+                <div><h3>Strong algorithmic roots</h3><p>Applying clean data structures and algorithmic efficiency to production code.</p></div>
               </div>
               <div className="principle">
                 <span>03</span>
-                <div><h3>Keep improving</h3><p>Learn by shipping projects, debugging, and iterating.</p></div>
+                <div><h3>Make AI practical</h3><p>Harness LLMs, RAG, and agentic workflows to solve concrete user problems.</p></div>
+              </div>
+              <div className="principle">
+                <span>04</span>
+                <div><h3>Keep improving</h3><p>Learn by shipping projects, debugging, and continuous architectural iteration.</p></div>
               </div>
             </div>
           </div>
@@ -247,6 +304,34 @@ function App() {
           </div>
         </section>
 
+        {/* CURRENTLY LEARNING SECTION */}
+        <section className="content-section section-wrap" id="learning">
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">GROWTH & HORIZONS</p>
+              <h2>Currently <span>Learning</span></h2>
+            </div>
+            <span className="section-number">03 / LEARNING</span>
+          </div>
+          <div className="learning-overview">
+            <p className="learning-subtitle">
+              Actively expanding beyond core web development into scalable cloud architecture, distributed systems, and modern agentic AI pipelines.
+            </p>
+            <div className="learning-grid">
+              {currentlyLearning.map((item) => (
+                <div className="learning-card" key={item.name}>
+                  <div className="learning-badge">
+                    <LuRocket size={14} />
+                    <span>In Progress</span>
+                  </div>
+                  <h3>{item.name}</h3>
+                  <p>{item.tag}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* PROJECTS SECTION */}
         <section className="content-section section-wrap" id="projects">
           <div className="section-heading">
@@ -254,7 +339,7 @@ function App() {
               <p className="section-kicker">THINGS I'VE BUILT</p>
               <h2>Featured <span>Projects</span></h2>
             </div>
-            <span className="section-number">03 / WORK</span>
+            <span className="section-number">04 / WORK</span>
           </div>
           <div className="projects-grid">
             {projects.map((project, idx) => (
@@ -317,6 +402,9 @@ function App() {
                 <a href="tel:+919027399867" className="quick-item">
                   <LuPhone size={16} /> +91 9027399867
                 </a>
+                <a href="https://leetcode.com/u/UjjwalTayal/" target="_blank" rel="noreferrer" className="quick-item">
+                  <SiLeetcode size={16} /> leetcode.com/u/UjjwalTayal
+                </a>
               </div>
             </div>
 
@@ -324,8 +412,17 @@ function App() {
               <a className="button primary" href="mailto:ujjwaltayal017@gmail.com">
                 <LuMail size={17} /> Email Me <FiArrowUpRight size={16} />
               </a>
-              <a className="button secondary" href="tel:+919027399867">
-                <LuPhone size={16} /> Call Me Direct
+              <a 
+                className="button secondary" 
+                href="/Ujjwal_Tayal_Resume.pdf" 
+                download="Ujjwal_Tayal_Resume.pdf"
+                target="_blank" 
+                rel="noreferrer"
+              >
+                <LuDownload size={16} /> Download Resume
+              </a>
+              <a href="https://leetcode.com/u/UjjwalTayal/" target="_blank" rel="noreferrer" className="contact-link">
+                <SiLeetcode size={15} /> LeetCode Profile
               </a>
               <a href="https://www.linkedin.com/in/ujjwal-tayal-79380732b/" target="_blank" rel="noreferrer" className="contact-link">
                 <FaLinkedin size={15} /> Connect on LinkedIn
